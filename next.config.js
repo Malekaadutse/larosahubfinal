@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   typescript: {
+    // Uncomment the line below if you want to ignore TypeScript build errors
     // ignoreBuildErrors: true,
   },
 };
