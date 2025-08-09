@@ -6,7 +6,7 @@
     }}
   >
     <div className="px-4 sm:px-6 lg:px-8 text-center text-white">
-      <h1 className="text-5xl md:text-6xl font-bold mb-6">About LaRosa Hub</h1>
+      <h1 className="text-5xl md:text-6xl font-bold mb-6">About LaRosa Hub
       <p className="text-xl max-w-3xl mx-auto">
         We're more than just an e-commerce platform. We're a community dedicated to bringing you the best products, 
         exceptional service, and an unmatched shopping experience.
