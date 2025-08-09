@@ -26,31 +26,30 @@
             big dreams has grown into a thriving e-commerce platform serving thousands of customers daily.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Mission</h3>
-            <p className="text-gray-600 mb-6">
-              To revolutionize online shopping by providing access to high-quality products, 
-              exceptional customer service, and innovative technology that makes shopping enjoyable and effortless.
-            </p>
-            
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Vision</h3>
-            <p className="text-gray-600">
-              To become the most trusted e-commerce platform in Africa, known for our commitment to 
-              quality, customer satisfaction, and sustainable business practices.
-            </p>
-          </div>
-          <div>
-            <img
-              src="https://readdy.ai/api/search-image?query=Modern%20e-commerce%20fulfillment%20center%20with%20organized%20packages%20and%20shipping%2C%20warehouse%20operations%2C%20logistics%20and%20distribution%2C%20online%20retail%20infrastructure%2C%20efficient%20delivery%20system&width=600&height=400&seq=mission-image&orientation=landscape"
-              alt="Our Mission"
-              className="w-full h-80 object-cover object-top rounded-2xl shadow-lg"
-            />
-          </div>
-        </div>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Mission</h3>
+        <p className="text-gray-600 mb-6">
+          To revolutionize online shopping by providing access to high-quality products, 
+          exceptional customer service, and innovative technology that makes shopping enjoyable and effortless.
+        </p>
+        
+        <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Vision</h3>
+        <p className="text-gray-600">
+          To become the most trusted e-commerce platform in Africa, known for our commitment to 
+          quality, customer satisfaction, and sustainable business practices.
+        </p>
+      </div>
+      <div>
+        <img
+          src="https://readdy.ai/api/search-image?query=Modern%20e-commerce%20fulfillment%20center%20with%20organized%20packages%20and%20shipping%2C%20warehouse%20operations%2C%20logistics%20and%20distribution%2C%20online%20retail%20infrastructure%2C%20efficient%20delivery%20system&width=600&height=400&seq=mission-image&orientation=landscape"
+          alt="Our Mission"
+          className="w-full h-80 object-cover object-top rounded-2xl shadow-lg"
+        />
       </div>
     </div>
+  </div>
+</div>
   </section>
 
   {/* Our Values */}
@@ -64,18 +63,18 @@
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {values.map((value, index) => (
-          <div key={index} className="bg-white rounded-2xl p-8 shadow-sm text-center">
-            <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <i className={`${value.icon} text-2xl text-orange-500 w-8 h-8 flex items-center justify-center`}></i>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">{value.title}</h3>
-            <p className="text-gray-600">{value.description}</p>
-          </div>
-        ))}
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    {values.map((value, index) => (
+      <div key={index} className="bg-white rounded-2xl p-8 shadow-sm text-center">
+        <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <i className={`${value.icon} text-2xl text-orange-500 w-8 h-8 flex items-center justify-center`}></i>
+        </div>
+        <h3 className="text-xl font-semibold text-gray-900 mb-4">{value.title}</h3>
+        <p className="text-gray-600">{value.description}</p>
       </div>
-    </div>
+    ))}
+  </div>
+</div>
   </section>
 
   {/* Our Team */}
@@ -89,22 +88,22 @@
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {teamMembers.map((member, index) => (
-          <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-            <img
-              src={member.image}
-              alt={member.name}
-              className="w-full h-64 object-cover object-top"
-            />
-            <div className="p-6 text-center">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-              <p className="text-orange-500 font-medium mb-4">{member.position}</p>
-              <p className="text-gray-600">{member.description}</p>
-            </div>
-          </div>
-        ))}
+    {teamMembers.map((member, index) => (
+      <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+        <img
+          src={member.image}
+          alt={member.name}
+          className="w-full h-64 object-cover object-top"
+        />
+        <div className="p-6 text-center">
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
+          <p className="text-orange-500 font-medium mb-4">{member.position}</p>
+          <p className="text-gray-600">{member.description}</p>
+        </div>
       </div>
-    </div>
+    ))}
+  </div>
+</div>
   </section>
 
   {/* Company Timeline */}
@@ -117,30 +116,30 @@
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto">
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-orange-200"></div>
-          
-          {milestones.map((milestone, index) => (
-            <div key={index} className={`flex items-center mb-12 ${index % 2 === 0 ? '' : 'flex-row-reverse'}`}>
-              <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}>
-                <div className="bg-white rounded-2xl p-6 shadow-sm">
-                  <div className="text-2xl font-bold text-orange-500 mb-2">{milestone.year}</div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{milestone.title}</h3>
-                  <p className="text-gray-600">{milestone.description}</p>
-                </div>
-              </div>
-              
-              {/* Timeline Dot */}
-              <div className="w-4 h-4 bg-orange-500 rounded-full border-4 border-white shadow-lg z-10"></div>
-              
-              <div className="w-1/2"></div>
+       <div className="max-w-4xl mx-auto">
+    <div className="relative">
+      {/* Timeline Line */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-orange-200"></div>
+      
+      {milestones.map((milestone, index) => (
+        <div key={index} className={`flex items-center mb-12 ${index % 2 === 0 ? '' : 'flex-row-reverse'}`}>
+          <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}>
+            <div className="bg-white rounded-2xl p-6 shadow-sm">
+              <div className="text-2xl font-bold text-orange-500 mb-2">{milestone.year}</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">{milestone.title}</h3>
+              <p className="text-gray-600">{milestone.description}</p>
             </div>
-          ))}
+          </div>
+          
+          {/* Timeline Dot */}
+          <div className="w-4 h-4 bg-orange-500 rounded-full border-4 border-white shadow-lg z-10"></div>
+          
+          <div className="w-1/2"></div>
         </div>
-      </div>
+      ))}
     </div>
+  </div>
+</div>
   </section>
 
   {/* Contact CTA */}
