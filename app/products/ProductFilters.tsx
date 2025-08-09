@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -115,11 +116,11 @@ export default function ProductFilters({
             </div>
             <div className="flex flex-wrap gap-2">
               {[
-                { label: 'Under R900.00', min: 0, max: 50 },
-                { label: '$50 - $100', min: 50, max: 100 },
-                { label: '$100 - $200', min: 100, max: 200 },
-                { label: '$200 - $500', min: 200, max: 500 },
-                { label: 'Over $500', min: 500, max: 1000 }
+                { label: 'Under R50.00', min: 0, max: 50 },
+                { label: 'R50 - R100', min: 50, max: 100 },
+                { label: 'R100 - R200', min: 100, max: 200 },
+                { label: 'R200 - R500', min: 200, max: 500 },
+                { label: 'Over R500', min: 500, max: 1000 }
               ].map((range, index) => (
                 <button
                   key={index}

@@ -18,17 +18,17 @@ export default function ForgotPassword() {
   const [isEmailSent, setIsEmailSent] = useState(false);
   const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-  const validateEmail = (email) => {
+  const validateEmail = (email: string) => {
     if (!email.trim()) {
       return 'Email is required';
     }
-    if (!/^[^\s@]+@[^\s@]+\\.[^\s@]+$/.test(email)) {
+    if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
       return 'Please enter a valid email address';
     }
     return '';
   };
 
-  const handleEmailChange = (e) => {
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setEmail(value);
     setEmailError('');

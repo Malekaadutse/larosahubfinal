@@ -32,25 +32,25 @@ export default function Register() {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   );
 
-  const validateFirstName = (name) => {
+  const validateFirstName = (name: string) => {
     if (!name.trim()) return 'First name is required';
     if (name.trim().length < 2) return 'First name must be at least 2 characters';
     return '';
   };
 
-  const validateLastName = (name) => {
+  const validateLastName = (name: string) => {
     if (!name.trim()) return 'Last name is required';
     if (name.trim().length < 2) return 'Last name must be at least 2 characters';
     return '';
   };
 
-  const validateEmail = (email) => {
+  const validateEmail = (email: string) => {
     if (!email.trim()) return 'Email address is required';
-    if (!/\S+@\S+\.\S+/.test(email)) return 'Please enter a valid email address';
+    if (!/\S+@\S+\.(\S+)/.test(email)) return 'Please enter a valid email address';
     return '';
   };
 
-  const validatePassword = (password) => {
+  const validatePassword = (password: string) => {
     if (!password) return 'Password is required';
     if (password.length < 8) return 'Password must be at least 8 characters';
     if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password)) {
@@ -59,46 +59,46 @@ export default function Register() {
     return '';
   };
 
-  const validateConfirmPassword = (confirmPassword, password) => {
+  const validateConfirmPassword = (confirmPassword: string, password: string) => {
     if (!confirmPassword) return 'Please confirm your password';
     if (confirmPassword !== password) return 'Passwords do not match';
     return '';
   };
 
-  const handleFieldChange = (field, value) => {
+  const handleFieldChange = (field: string, value: string | boolean) => {
     switch (field) {
       case 'firstName':
-        setFirstName(value);
+        setFirstName(value as string);
         setFirstNameError('');
         break;
       case 'lastName':
-        setLastName(value);
+        setLastName(value as string);
         setLastNameError('');
         break;
       case 'email':
-        setEmail(value);
+        setEmail(value as string);
         setEmailError('');
         break;
       case 'password':
-        setPassword(value);
+        setPassword(value as string);
         setPasswordError('');
         if (confirmPassword) {
-          setConfirmPasswordError(validateConfirmPassword(confirmPassword, value));
+          setConfirmPasswordError(validateConfirmPassword(confirmPassword, value as string));
         }
         break;
       case 'confirmPassword':
-        setConfirmPassword(value);
+        setConfirmPassword(value as string);
         setConfirmPasswordError('');
         break;
       case 'acceptTerms':
-        setAcceptTerms(value);
+        setAcceptTerms(value as boolean);
         setTermsError('');
         break;
     }
     if (registrationStatus) setRegistrationStatus('');
   };
 
-  const createAccount = async (userData) => {
+  const createAccount = async (userData: {firstName: string, lastName: string, email: string, password: string}) => {
     try {
       const { data, error } = await supabase.auth.signUp({
         email: userData.email,

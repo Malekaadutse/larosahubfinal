@@ -107,7 +107,7 @@ export default function CategoriesPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                   </div>
-                  
+
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="text-xl font-semibold text-gray-900 group-hover:text-orange-500 transition-colors">
@@ -117,11 +117,11 @@ export default function CategoriesPage() {
                         {category.productCount.toLocaleString()}
                       </span>
                     </div>
-                    
+
                     <p className="text-gray-600 text-sm mb-4">
                       {category.description}
                     </p>
-                    
+
                     <div className="flex flex-wrap gap-1 mb-4">
                       {category.subcategories.slice(0, 3).map((sub, index) => (
                         <span
@@ -137,10 +137,10 @@ export default function CategoriesPage() {
                         </span>
                       )}
                     </div>
-                    
+
                     <div className="flex items-center justify-between">
                       <span className="text-orange-500 font-medium text-sm group-hover:text-orange-600">
-                        Shop Now ttttt
+                        Shop Now
                       </span>
                       <i className="ri-arrow-right-line text-orange-500 group-hover:translate-x-1 transition-transform"></i>
                     </div>
@@ -161,7 +161,7 @@ export default function CategoriesPage() {
               Discover our best-selling categories with thousands of satisfied customers
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {categories.slice(0, 3).map((category, index) => (
               <div key={category.id} className="text-center">

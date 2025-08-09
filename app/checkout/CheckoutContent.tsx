@@ -57,7 +57,7 @@ export default function CheckoutContent() {
       if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
       if (!formData.email.trim()) {
         newErrors.email = 'Email is required';
-      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      } else if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(formData.email)) {
         newErrors.email = 'Please enter a valid email address';
       }
       if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
@@ -70,13 +70,13 @@ export default function CheckoutContent() {
     if (step === 2) {
       if (!formData.cardNumber.trim()) {
         newErrors.cardNumber = 'Card number is required';
-      } else if (!/^\\d{16}$/.test(formData.cardNumber.replace(/\s/g, ''))) {
+      } else if (!/^\\d{16}$/.test(formData.cardNumber.replace(/\\s/g, ''))) {
         newErrors.cardNumber = 'Please enter a valid 16-digit card number';
       }
 
       if (!formData.expiryDate.trim()) {
         newErrors.expiryDate = 'Expiry date is required';
-      } else if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(formData.expiryDate)) {
+      } else if (!/^(0[1-9]|1[0-2])\\/\\d{2}$/.test(formData.expiryDate)) {
         newErrors.expiryDate = 'Please enter date in MM/YY format';
       }
 
@@ -334,7 +334,7 @@ export default function CheckoutContent() {
                       type="text"
                       value={formData.cardNumber}
                       onChange={(e) => {
-                        const value = e.target.value.replace(/\D/g, '').replace(/(\d{4})(?=\d)/g, '$1 ');
+                        const value = e.target.value.replace(/\D/g, '').replace(/(\d{4})(?=\.)/g, '$1 ');
                         handleInputChange('cardNumber', value);
                       }}
                       placeholder="1234 5678 9012 3456"
@@ -503,9 +503,12 @@ export default function CheckoutContent() {
                   <div className="mb-6 p-4 bg-gray-50 rounded-lg">
                     <h3 className="font-semibold text-gray-900 mb-2">Shipping Address</h3>
                     <p className="text-gray-700">
-                      {formData.firstName} {formData.lastName}<br />
-                      {formData.address}<br />
-                      {formData.city}, {formData.province} {formData.zipCode}<br />
+                      {formData.firstName} {formData.lastName}
+                      <br />
+                      {formData.address}
+                      <br />
+                      {formData.city}, {formData.province} {formData.zipCode}
+                      <br />
                       {formData.email} • {formData.phone}
                     </p>
                   </div>

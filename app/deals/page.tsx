@@ -274,7 +274,7 @@ export default function DealsPage() {
                   <p className="text-orange-300 font-semibold text-lg mb-1">{category.discount}</p>
                   <p className="text-gray-200 text-sm">{category.itemsCount}</p>
                   <button className="mt-4 bg-white text-black px-6 py-2 rounded-lg hover:bg-gray-100 cursor-pointer whitespace-nowrap">
-                    Shop Now ttttt
+                    Shop Now
                   </button>
                 </div>
               </div>
