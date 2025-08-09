@@ -334,7 +334,7 @@ export default function CheckoutContent() {
                       type="text"
                       value={formData.cardNumber}
                       onChange={(e) => {
-                        const value = e.target.value.replace(/\D/g, '').replace(/(\d{4})(?=\.)/g, '$1 ');
+                        const value = e.target.value.replace(/\\D/g, '').replace(/(\\d{4})(?=.)/g, '$1 ');
                         handleInputChange('cardNumber', value);
                       }}
                       placeholder="1234 5678 9012 3456"
@@ -351,7 +351,7 @@ export default function CheckoutContent() {
                         type="text"
                         value={formData.expiryDate}
                         onChange={(e) => {
-                          const value = e.target.value.replace(/\D/g, '').replace(/(\d{2})(\d)/, '$1/$2');
+                          const value = e.target.value.replace(/\\D/g, '').replace(/(\\d{2})(\\d)/, '$1/$2');
                           handleInputChange('expiryDate', value);
                         }}
                         placeholder="MM/YY"
@@ -365,7 +365,7 @@ export default function CheckoutContent() {
                       <input
                         type="text"
                         value={formData.cvv}
-                        onChange={(e) => handleInputChange('cvv', e.target.value.replace(/\D/g, ''))}
+                        onChange={(e) => handleInputChange('cvv', e.target.value.replace(/\\D/g, ''))}
                         placeholder="123"
                         maxLength={4}
                         className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 ${errors.cvv ? 'border-red-500' : 'border-gray-300'}`}
